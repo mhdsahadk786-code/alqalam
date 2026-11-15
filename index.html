@@ -87,6 +87,55 @@ h1,h2,h3,.brand,.moto{font-family:Lexend,sans-serif}
 .pod{display:grid;place-items:center;margin:6px auto}.pod svg{width:min(250px,72vw);height:auto}
 .pos,.por{fill:none;stroke-width:6}.por{stroke:var(--line)}.pot{font:700 7px 'DejaVu Sans',sans-serif;fill:var(--ink)}.pou{font:400 2.6px 'DejaVu Sans',sans-serif;fill:var(--mute)}
 .pol{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin:10px 0;font-size:.92rem}.pol i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-inline-end:6px;vertical-align:-1px}.pov{margin:4px}
+
+/* ===== Final result celebration: fire names, flying results, embers ===== */
+.fx{position:relative;display:inline-block;padding:.05em .45em;margin:0 .05em;border-radius:.45em;font-weight:800;letter-spacing:.05em;line-height:1.25;white-space:nowrap;isolation:isolate;text-transform:none;font-style:normal;text-shadow:0 0 3px var(--a),0 -3px 8px var(--c),0 -7px 14px var(--d);animation:fxT 1.1s ease-in-out infinite alternate,fxB 1.7s ease-in-out infinite alternate}
+.fx.r{--a:#fff6c8;--b:#ffd34a;--c:#ff9122;--d:#ff3d0b;--e:#c40000;background:linear-gradient(#3a0600,#1c0300);color:#fff3bd}
+.fx.b{--a:#f0fdff;--b:#9bebff;--c:#3db8ff;--d:#1573ff;--e:#0a2fd0;background:linear-gradient(#031238,#020a24);color:#e3f8ff}
+@keyframes fxT{0%{text-shadow:0 0 2px var(--a),0 -2px 5px var(--b),0 -4px 9px var(--c),0 -7px 13px var(--d),0 -11px 18px var(--e)}100%{text-shadow:0 0 3px var(--a),0 -3px 7px var(--b),0 -6px 12px var(--c),0 -10px 17px var(--d),0 -15px 24px var(--e)}}
+@keyframes fxB{0%{box-shadow:0 0 8px var(--d),0 -4px 16px var(--e)}100%{box-shadow:0 0 14px var(--c),0 -8px 26px var(--d)}}
+.fx::before,.fx::after{content:"";position:absolute;left:6%;right:6%;bottom:78%;height:1.05em;pointer-events:none;z-index:-1;background:radial-gradient(ellipse 18% 100% at 12% 100%,var(--c),transparent 72%),radial-gradient(ellipse 20% 100% at 35% 100%,var(--b),transparent 72%),radial-gradient(ellipse 18% 100% at 60% 100%,var(--d),transparent 72%),radial-gradient(ellipse 20% 100% at 85% 100%,var(--c),transparent 72%);filter:blur(1.2px);transform-origin:50% 100%;animation:fxL .55s ease-in-out infinite alternate}
+.fx::after{left:0;right:0;bottom:70%;opacity:.85;animation-duration:.8s;animation-delay:-.3s;transform:scaleX(-1)}
+@keyframes fxL{0%{transform:scale(1,.7) skewX(-6deg)}100%{transform:scale(.92,1.25) skewX(6deg)}}
+.bar{grid-template-columns:128px 1fr 44px}
+.cp{position:relative;overflow:hidden;text-align:center;color:#fff;padding:30px 14px 26px;background:radial-gradient(60% 120% at 20% 100%,#7a0d00aa,transparent 70%),radial-gradient(60% 120% at 85% 100%,#0a3dbfaa,transparent 70%),linear-gradient(#0c0608,#070b1c)}
+.cp p{margin:0}.cp .k{font:700 .8rem Lexend,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#ffe9a8}
+.cp .rw{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:30px 36px;margin:34px 0 12px}
+.cp .it{display:grid;gap:8px;justify-items:center}.cp .it small{font:700 .8rem Lexend,sans-serif;letter-spacing:.2em;color:#ffe9a8}
+.cp .md{font-size:2.6rem;line-height:1;animation:cpb 2.2s ease-in-out infinite alternate}.cp .w .md{font-size:3.6rem}
+.cp .w .fx{font-size:clamp(1.9rem,9.5vw,3.4rem)}.cp .ru .fx{font-size:clamp(1.5rem,7vw,2.5rem)}
+@keyframes cpb{to{transform:translateY(-6px) scale(1.08)}}
+#sparks{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden}
+#sparks{z-index:28}
+.nofx #sparks{display:none}
+#fxBtn{position:fixed;z-index:31;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:2px solid #ffb84a;background:#1a0a05;font-size:1.3rem;line-height:1;cursor:pointer;box-shadow:0 0 14px #ff5a1f}
+.nofx #fxBtn{filter:grayscale(1);box-shadow:none;opacity:.7}
+@media(prefers-reduced-motion:reduce){.fx,.fx::before,.fx::after,.cp .md{animation:none}#sparks{display:none}}
+
+/* ===== Individual leaders highlight ===== */
+.ld{border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin:6px 0;background:var(--card);align-items:center}
+.ld .tm{font-size:1.5rem;line-height:1;text-align:center}
+.ld1{background:linear-gradient(90deg,#fff3c4,#ffd96b);border-color:#d49a1f;color:#2B1408;font-weight:800;box-shadow:0 0 14px #f2b52a99;animation:ldG 2.2s ease-in-out infinite alternate}
+.ld1>b:last-child{font-size:1.45rem}.ld1 .tm{font-size:1.9rem}
+.ld2{background:linear-gradient(90deg,#f4f6f9,#d6dce4);border-color:#9aa5b3;color:#1d2530;font-weight:700}
+.ld3{background:linear-gradient(90deg,#f8e6d2,#e0b27f);border-color:#b8732f;color:#2B1408;font-weight:700}
+.ld small.mute{color:inherit;opacity:.75;font-weight:500}
+@keyframes ldG{to{box-shadow:0 0 24px #f2b52aee}}
+@media(prefers-reduced-motion:reduce){.ld1{animation:none}}
+
+/* ===== Home page: individual leaders ===== */
+.ld{padding:28px 16px 6px}.ldi{max-width:760px;margin:0 auto}
+.ld h2{text-align:center;margin:0 0 4px}.ld .sub{text-align:center;margin:0 0 16px}
+.lg2{display:grid;gap:14px}@media(min-width:640px){.lg2{grid-template-columns:1fr 1fr}}
+.lc{border-radius:16px;padding:14px 14px 8px;background:linear-gradient(160deg,#FFF6D6,#F6DD9A);border:2px solid #D49A55;box-shadow:0 6px 18px #8B3A1233;color:#2B1408}
+.lc h3{margin:0 0 6px;font:800 .8rem Lexend,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A2F0E;text-align:center}
+.lr{display:flex;align-items:center;gap:10px;padding:9px 8px;border-top:1px solid #D49A5566;border-radius:10px}
+.lr>div{flex:1;min-width:0}.lr .lm{font-size:1.5rem;line-height:1}.lr .lv{font:800 1.15rem Lexend,sans-serif;color:#7A2F0E}
+.lr small{display:inline-block;margin-top:.8em;color:#5a3a24}
+.lr.t1{border:2px solid #D49A55;background:linear-gradient(100deg,transparent 30%,#fffb 50%,transparent 70%) 0 0/250% 100%,#FFE9A8;animation:shn 3.2s linear infinite;margin:6px 0}
+.lr.t1 .lm{font-size:2rem}.lr.t1>div>b{font-size:1.15rem}.lr.t1 .lv{font-size:1.4rem}
+@keyframes shn{from{background-position:150% 0,0 0}to{background-position:-100% 0,0 0}}
+@media(prefers-reduced-motion:reduce){.lr.t1{animation:none}}
 </style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.109.0"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@700&display=swap" rel="stylesheet">
 </head><body>
@@ -139,7 +188,7 @@ addEventListener('resize',()=>{const s=E('sl');if(s){s.scrollLeft=SEC*s.clientWi
 function psUI(){const o=E('ps')&&E('ps').value=='O';document.querySelectorAll('.stg').forEach(e=>e.hidden=o)}
 const V={
 home(){const p=pts();E('app').innerHTML=`<section class="poster"><img class="lg" src="${LOGO}" alt="MQF, Markaz, UHSA"><p class="art">Art Rooted<br>in Revelation</p><div class="emb"><div class="emw" role="img" aria-label="Al Qalam emblem" style="--e:url(${EMB})"><div class="emi"><i class="emp"></i></div></div><div><h1 aria-label="Al Qalam">${[...'Al Qalam'].map((c,i)=>c==' '?' ':`<span aria-hidden="true" style="--i:${i}">${c}</span>`).join('')}</h1><p class="qalam"><span>Quest</span><span>Alacrity</span><span>Loyalty</span><span>Amiability</span><span>Morality</span></p></div></div><p><b>${when()}</b></p><p>${pill()}</p><div class="orgs"><div><b>${sx('USWATHUN HASANA')}</b><br>${sx('STUDENTS’ ASSOCIATION')}</div><div><b>${sx('MAQS › MARKAZ HIFZ, KARANTHUR')}</b><br>${sx('MARKAZ ACADEMY OF QUR’AN STUDIES')}</div></div><p><a class="btn" href="#programs">See programs</a> <a class="btn o" href="#login">Team login</a></p><img class="desk" src="${DESK}" alt=""></section>
-<section class="wrap">${(S.notes||[]).map(n=>`<div class="note ${n.s}"${n.s=='a'?' lang="ar"':''}>${esc(n.t)}</div>`).join('')}<h2>Three teams, one pen</h2><p>Students gather for Qur’an, speech, writing, art and music, and compete as teams and as individuals.</p>
+${LEAD(p)}<section class="wrap">${(S.notes||[]).map(n=>`<div class="note ${n.s}"${n.s=='a'?' lang="ar"':''}>${esc(n.t)}</div>`).join('')}<h2>Three teams, one pen</h2><p>Students gather for Qur’an, speech, writing, art and music, and compete as teams and as individuals.</p>
 <div class="grid">${K.map(k=>`<div class="card" style="border-inline-start:6px solid ${T[k].c}"><h3 style="margin-top:0">${T[k].n}</h3><p class="mute">${T[k].d}</p><b>${p.t[k]} points</b></div>`).join('')}</div>
 <p><a class="btn o" href="#points">Full standings</a> <a class="btn o" href="#schedule">Schedule</a></p></section>`},
 poll(){E('app').innerHTML=pollHTML()||'<section class="wrap" id="poll"><h2>Poll</h2><p class="mute">There is no poll right now.</p></section>'},
@@ -147,7 +196,7 @@ programs(){E('app').innerHTML=`<section class="wrap"><h2>Programs</h2><p class="
 schedule(){const d={};srt().filter(p=>p.st!='O').forEach(p=>(d[p.day]=d[p.day]||[]).push(p));E('app').innerHTML=`<section class="wrap"><h2>Schedule</h2><p class="mute">${when()}</p>${sbar('Search program, venue, day or zone')}${Object.keys(d).map(k=>`<div class="fgp"><h3>${esc(dl(k))}</h3>${d[k].map(p=>`<div class="row fi" data-x="${esc(dl(k)+' '+p.cat)}"><b class="tm">${esc(tf(p.time))}</b><span>${esc(p.name)}<small class="mute"> ${meta(p)}, ${esc(p.venue)}</small></span></div>`).join('')}</div>`).join('')||'<p class="mute">The schedule will appear once stage programs are added.</p>'}</section>`;sbInit()},
 points(){const p=pts(),mx=Math.max(1,...K.map(k=>p.t[k])),ids=pubSeq().filter(x=>(S.results[x.p.id]||[]).some(r=>r.pl>=1&&r.pl<=3)).reverse();E('app').innerHTML=`<section class="wrap"><h2>Points</h2><p class="mute">Points after ${S.programs.filter(x=>x.rp).length} of ${S.programs.length} results published</p>
 ${[...K].sort((a,b)=>p.t[b]-p.t[a]).map(k=>`<div class="bar"><span>${T[k].n}</span><i style="width:${p.t[k]/mx*100}%;background:${T[k].c}"></i><b>${p.t[k]}</b></div>`).join('')}
-${S.showInd?`<h3>Stage individual leaders</h3>${p.indS.slice(0,10).map((x,i)=>`<div class="row"><b class="tm">${i+1}</b><span>${esc(x.n)}<small class="mute"> ${T[x.tm].n}, ${ZN[x.z]}</small></span><b>${x.v}</b></div>`).join('')||'<p class="mute">Stage leaders appear here once points are added.</p>'}`:''}${S.showInd?`<h3>Off-stage individual leaders</h3>${p.indO.slice(0,10).map((x,i)=>`<div class="row"><b class="tm">${i+1}</b><span>${esc(x.n)}<small class="mute"> ${T[x.tm].n}, ${ZN[x.z]}</small></span><b>${x.v}</b></div>`).join('')||'<p class="mute">Off-stage leaders appear here once points are added.</p>'}`:''}<h3>Results by program</h3>${ids.map(x=>{const pr=x.p,id=pr.id;return pr?`<div class="card"><div class="rh"><span class="sn">${x.n}</span><b>${esc(pr.name)}</b><b class="zb">(${ZN[pr.zone]||''})</b></div>${S.results[id].filter(r=>r.pl>=1&&r.pl<=3).map(r=>`<div>${r.pl}. ${esc(gn(pr,r.n))} <small class="mute">${T[r.t].n}</small></div>`).join('')}</div>`:''}).join('')||'<p class="mute">No results yet.</p>'}</section>`},
+${S.showInd?`<h3>Stage individual leaders</h3>${p.indS.slice(0,10).map((x,i)=>`<div class="row ld ld${i+1}"><b class="tm">${['🥇','🥈','🥉'][i]||i+1}</b><span>${esc(x.n)}<small class="mute"> ${T[x.tm].n}, ${ZN[x.z]}</small></span><b>${x.v}</b></div>`).join('')||'<p class="mute">Stage leaders appear here once points are added.</p>'}`:''}${S.showInd?`<h3>Off-stage individual leaders</h3>${p.indO.slice(0,10).map((x,i)=>`<div class="row ld ld${i+1}"><b class="tm">${['🥇','🥈','🥉'][i]||i+1}</b><span>${esc(x.n)}<small class="mute"> ${T[x.tm].n}, ${ZN[x.z]}</small></span><b>${x.v}</b></div>`).join('')||'<p class="mute">Off-stage leaders appear here once points are added.</p>'}`:''}<h3>Results by program</h3>${ids.map(x=>{const pr=x.p,id=pr.id;return pr?`<div class="card"><div class="rh"><span class="sn">${x.n}</span><b>${esc(pr.name)}</b><b class="zb">(${ZN[pr.zone]||''})</b></div>${S.results[id].filter(r=>r.pl>=1&&r.pl<=3).map(r=>`<div>${r.pl}. ${esc(gn(pr,r.n))} <small class="mute">${T[r.t].n}</small></div>`).join('')}</div>`:''}).join('')||'<p class="mute">No results yet.</p>'}</section>`},
 login(){E('app').innerHTML=`<section class="wrap narrow"><h2>Log in</h2><p class="mute">For the coordinator and team leaders.</p><label>Email<input id="u" type="email" autocomplete="username" autocapitalize="none"></label><label>Password<input id="pw" type="password" autocomplete="current-password"></label><p id="m" class="bad"></p><button class="btn" onclick="doLogin()">Log in</button></section>`;E('pw').onkeydown=e=>e.key=='Enter'&&doLogin()},
 dash(){me.r=='C'?coord():team()}};
 async function doLogin(){msg('Signing in…');const{error}=await SB.auth.signInWithPassword({email:g('u'),password:E('pw').value});if(error)return msg('Email or password is not correct.');await prof();if(!me){await SB.auth.signOut();return msg('This account has no role yet. Ask the coordinator.')}await load();go('dash');route()}
@@ -168,7 +217,7 @@ ${sbar('Search programs or students')}
 <div class="tabs" id="tabs" role="tablist" aria-label="Dashboard sections">${['1. Points','2. Programs & entries','3. Add results','4. Result call list','5. Add / edit programs'].map((n,i)=>`<button role="tab" onclick="slide(${i})">${n}</button>`).join('')}</div>
 <div class="sl" id="sl" onscroll="slSc()">
 <div class="pn" role="tabpanel" aria-label="Team and individual points"><h3>Team totals now</h3><div class="grid">${K.map(k=>`<div class="card" style="border-inline-start:6px solid ${T[k].c}"><b>${T[k].n}</b><div>${pt.t[k]} points</div></div>`).join('')}</div>
-<h3>Top individuals</h3>${[['Stage',pt.indS],['Off stage',pt.indO]].map(a=>`<div class="card"><b>${a[0]}</b>${a[1].slice(0,3).map((x,i)=>`<div class="row"><b class="tm">${i+1}</b><span>${esc(x.n)}<small class="mute"> ${T[x.tm].n}, ${ZN[x.z]}</small></span><b>${x.v}</b></div>`).join('')||'<p class="mute">No points yet.</p>'}</div>`).join('')}
+<h3>Top individuals</h3>${[['Stage',pt.indS],['Off stage',pt.indO]].map(a=>`<div class="card"><b>${a[0]}</b>${a[1].slice(0,3).map((x,i)=>`<div class="row ld ld${i+1}"><b class="tm">${['🥇','🥈','🥉'][i]||i+1}</b><span>${esc(x.n)}<small class="mute"> ${T[x.tm].n}, ${ZN[x.z]}</small></span><b>${x.v}</b></div>`).join('')||'<p class="mute">No points yet.</p>'}</div>`).join('')}
 <h3>Team points</h3><p class="mute">Points are added automatically when you press Add points on a program. You can also adjust them by hand (a minus sign deducts).</p><div class="two col3">${K.map(k=>`<label>${T[k].n}<input id="adj${k}" type="number" value="${(S.adj||{})[k]||0}"></label>`).join('')}</div><button class="btn" onclick="saveAdj()">Save manual points</button> <button class="btn o" onclick="setS({showInd:!S.showInd})">${S.showInd?'Hide':'Show'} individual leaders</button>
 <h3>Programs counted for individual leaders</h3><p class="mute">Stage and off-stage each have one leader list. Untick a program to leave it out of the leader marks (team points are not affected).</p>${SO(srt().filter(p=>p.type=='I'),p=>`<label class="fi" style="display:flex;gap:10px;align-items:center"><input type="checkbox" style="width:auto" ${(S.noInd||[]).includes(p.id)?'':'checked'} onchange="togInd(${p.id})">${esc(p.name)} <small class="mute">${p.st=='S'?'Stage':'Off stage'}</small></label>`)||'<p class="mute">No individual programs yet.</p>'}
 <h3>Points, grades and limits</h3><p class="mute">Place points for individual programs (1st, 2nd, 3rd)</p><div class="two col3">${[0,1,2].map(i=>`<input id="ip${i+1}" type="number" value="${S.pts.I[i]}">`).join('')}</div>
@@ -284,4 +333,41 @@ navUI(r);scrollTo(0,0);if(ERR)E('app').insertAdjacentHTML('afterbegin','<div cla
 addEventListener('hashchange',()=>load().then(route));
 (async()=>{if(!SB){E('app').innerHTML='<p class="wrap bad">Could not load the page. Check your internet connection and refresh.</p>';return}
 const{data}=await SB.auth.getSession();if(data.session)await prof();await load();route()})();
+
+function LEAD(p){
+ if(!S.showInd)return'';
+ const M=['🥇','🥈','🥉'];
+ const blk=(t,a)=>{const rows=a.map(x=>({x,r:1+a.filter(y=>y.v>x.v).length})).filter(o=>o.r<=3).slice(0,6);
+  return rows.length?`<div class="lc"><h3>${t}</h3>${rows.map(o=>`<div class="lr${o.r==1?' t1':''}"><span class="lm" aria-hidden="true">${M[o.r-1]}</span><div><b>${esc(o.x.n)}</b><br><small>${(T[o.x.tm]||{n:o.x.tm}).n}${ZN[o.x.z]?', '+ZN[o.x.z]:''}</small></div><b class="lv">${o.x.v}</b></div>`).join('')}</div>`:''};
+ const a=blk('Stage leaders',p.indS),b=blk('Off-stage leaders',p.indO);
+ return a||b?`<section class="ld"><div class="ldi"><h2>Individual leaders</h2><p class="mute sub">Top scorers from published results</p><div class="lg2">${a}${b}</div><p style="text-align:center"><a class="btn o" href="#points">All leaders</a></p></div></section>\n`:''}
+
+/* ===== Final result celebration ===== */
+;(function(){
+const has=/HILLSINAI|HILLSAFA/,spl=/(HILLSINAI|HILLSAFA)/,app=document.getElementById('app'),root=document.documentElement;
+try{if(localStorage.getItem('qalam_fx')=='0')root.classList.add('nofx')}catch(e){}
+const BAN='<section class="cp" aria-label="Final result"><p class="k">Al Qalam 2026 · Final result</p><div class="rw"><div class="it w"><span class="md" aria-hidden="true">🏆</span><small>WINNER</small><b class="fx r">HILLSINAI</b></div><div class="it ru"><span class="md" aria-hidden="true">🥈</span><small>RUNNER-UP</small><b class="fx b">HILLSAFA</b></div></div><p class="k" style="opacity:.75">Congratulations to both teams</p></section>';
+function fire(r){const w=document.createTreeWalker(r,4,{acceptNode(n){if(!has.test(n.nodeValue))return 3;const p=n.parentElement;return!p||p.closest('.fx,option,textarea,script,style,select')?3:1}}),a=[];
+while(w.nextNode())a.push(w.currentNode);
+a.forEach(n=>{const f=document.createDocumentFragment();n.nodeValue.split(spl).forEach(s=>{const k=s=='HILLSINAI'?'r':s=='HILLSAFA'?'b':'';if(k){const e=document.createElement('span');e.className='fx '+k;e.textContent=s;f.appendChild(e)}else if(s)f.appendChild(document.createTextNode(s))});n.replaceWith(f)})}
+let tm=0;const mo=new MutationObserver(()=>{clearTimeout(tm);tm=setTimeout(fxRun,20)});
+function fxRun(){mo.disconnect();try{if(app.querySelector('.poster')&&!app.querySelector('.cp'))app.insertAdjacentHTML('afterbegin',BAN);fire(app)}catch(e){}mo.observe(app,{childList:true,subtree:true,characterData:true})}
+fxRun();
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+const c=document.createElement('canvas');c.id='sparks';c.setAttribute('aria-hidden','true');document.body.appendChild(c);
+const x=c.getContext('2d'),dpr=Math.min(2,devicePixelRatio||1);let cw,ch,P=[];
+const rs=()=>{cw=innerWidth;ch=innerHeight;c.width=cw*dpr;c.height=ch*dpr;x.setTransform(dpr,0,0,dpr,0,0)};rs();addEventListener('resize',rs);
+const mk=i=>({x:Math.random()*cw,y:i?Math.random()*ch:ch+10,vy:.6+Math.random()*1.8,ph:Math.random()*6.28,sw:.3+Math.random()*.8,r:1+Math.random()*2.6,red:Math.random()<.58,a:.5+Math.random()*.5});
+for(let i=Math.min(110,Math.round(cw/9));i>0;i--)P.push(mk(true));
+(function loop(){requestAnimationFrame(loop);if(root.classList.contains('nofx')||document.hidden)return;
+x.clearRect(0,0,cw,ch);x.globalCompositeOperation='lighter';
+P.forEach((p,i)=>{p.y-=p.vy;p.ph+=.03;p.x+=Math.sin(p.ph)*p.sw;if(p.y<-10){P[i]=mk(false);return}
+const al=p.a*Math.min(1,p.y/ch*1.4+.15),g=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+g.addColorStop(0,p.red?'rgba(255,230,150,'+al+')':'rgba(220,250,255,'+al+')');
+g.addColorStop(.35,p.red?'rgba(255,90,20,'+al*.7+')':'rgba(40,150,255,'+al*.7+')');
+g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.beginPath();x.arc(p.x,p.y,p.r*4,0,6.283);x.fill()})})()}
+const B=document.createElement('button');B.id='fxBtn';B.type='button';B.textContent='🔥';
+const sync=()=>{const off=root.classList.contains('nofx'),t=off?'Show celebration':'Hide celebration';B.setAttribute('aria-pressed',String(!off));B.setAttribute('aria-label',t);B.title=t};
+B.onclick=()=>{root.classList.toggle('nofx');try{localStorage.setItem('qalam_fx',root.classList.contains('nofx')?'0':'1')}catch(e){}sync()};sync();document.body.appendChild(B);
+})();
 </script></body></html>
